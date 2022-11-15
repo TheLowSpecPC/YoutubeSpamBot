@@ -25,7 +25,7 @@ while(a==0):
         x=1
 
         while(x<=100):
-            driver.find_element_by_css_selector("#content > input[type=file]").send_keys("")
+            driver.find_element_by_css_selector("#content > input[type=file]").send_keys("example.mp4")
             sleep(1)
             notkids = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "VIDEO_MADE_FOR_KIDS_NOT_MFK")))
             notkids.click()
