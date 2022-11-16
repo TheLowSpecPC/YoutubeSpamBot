@@ -13,19 +13,19 @@ while(a==0):
 
         mail = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "identifier")))
         mail.send_keys("")
-        driver.find_element_by_id("identifierNext").click()
+        driver.find_element("id", "identifierNext").click()
         sleep(1)
         passwd = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "Passwd")))
         passwd.send_keys("")
-        driver.find_element_by_id("passwordNext").click()
+        driver.find_element("id", "passwordNext").click()
         sleep(2)
 
-        driver.get("https://studio.youtube.com/channel/UCmIDsd0bdgCa8iOcNoM7cCw/videos/upload?d=ud&filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D")
+        driver.get("Youtube Upload Button Link")
         sleep(1)
         x=1
 
         while(x<=100):
-            driver.find_element_by_css_selector("#content > input[type=file]").send_keys("example.mp4")
+            driver.find_element(By.CSS_SELECTOR,"#content > input[type=file]").send_keys("example.mp4")
             sleep(1)
             notkids = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "VIDEO_MADE_FOR_KIDS_NOT_MFK")))
             notkids.click()
@@ -39,7 +39,7 @@ while(a==0):
             next3 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "next-button")))
             next3.click()
             sleep(1)
-            driver.find_element_by_name("PUBLIC").click()
+            driver.find_element(By.NAME,"PUBLIC").click()
             sleep(1)
             done = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "done-button")))
             done.click()
